@@ -1,13 +1,6 @@
-<html>
 
-<body>
-{%for object in object_list%}
+
 <h2>{{object.id}}: {{object.heading}}</h2>
 <em>created by:{{object.author}} ({{object.email}}) on {{object.timestamp}}</em>
 <p>{{object.article}}</p>
 <em> last updated : {{object.updated}}</em>
-{%endfor%}
-
-
-</body>
-</html>

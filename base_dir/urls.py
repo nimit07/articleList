@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from news.views import ArticlesList
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^articles/(?P<year>[0-9]{4})/$',ArticlesList.as_view(),name='articles-list-year_wise'),
+    url(r'^articles/$',ArticlesList.as_view(),name='articles-list'),
+    url(r'^articles/(?P<year>[0-9]{4})/(?P<month>[0-1]{1}[0-9]{1})/$',ArticlesList.as_view(),name='articles-list-month_wise'),
 ]
